@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FindDeviceActivity"
+    android:background="@android:color/white">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/find_device_toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rescue"
+                android:id="@+id/toolbar_title"
+                android:fontFamily="@font/star1"
+                android:textSize="20sp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/find_device_toolbar">
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/find_device_toolbar"
+            android:background="@drawable/round_background0"
+            android:text="Search Device"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:onClick="searchBluetoothDevice"
+            android:id="@+id/search_device_btn"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/round_background5"
+            android:layout_margin="10dp"
+            android:elevation="5dp"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Device Name:"
+                android:textColor="@android:color/black"
+                android:fontFamily="@font/ccalibri"
+                android:textSize="18sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/color3"
+                android:fontFamily="@font/calibril"
+                android:textSize="18sp"
+                android:id="@+id/device_name_id"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Device MAC address:"
+                android:textColor="@android:color/black"
+                android:fontFamily="@font/ccalibri"
+                android:textSize="18sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/color3"
+                android:fontFamily="@font/calibril"
+                android:textSize="18sp"
+                android:id="@+id/device_address_id"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bond State:"
+                android:textColor="@android:color/black"
+                android:fontFamily="@font/ccalibri"
+                android:textSize="18sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/color3"
+                android:fontFamily="@font/calibril"
+                android:textSize="18sp"
+                android:id="@+id/device_bond_state_id"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="40dp"
+        android:padding="10dp"
+        android:id="@+id/paired_device_list_view"
+        android:elevation="5dp"
+        android:background="@drawable/round_background5"
+        android:visibility="invisible" />
+
+</RelativeLayout>
